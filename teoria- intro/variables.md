@@ -1,0 +1,3 @@
+- `let` -- es una declaración variable moderna que respeta el scope.
+- `var` -- es una declaración variable de la vieja escuela. **NO USAR** NUNCA POR EL PROBLEMA DE **HOISTING**.
+- `const` -- es como `let`, pero el valor de la variable no puede ser cambiado.
