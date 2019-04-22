@@ -790,907 +790,907 @@
 // PD usa Object.entries y la desestructuración para iterar sobre pares clave/valor.
 
 
-// Ejercicio muy guay de una entrevista que hice:
-// Given the string values A and B being:
-// A: The price of an item.
-// B: The money paid for the item.
-// You will need to create a function 'cashRegister' to calculate the change to give back after the purchase.
-// The change will need to be in the format of an array with the correct string values inside, this values can be:
-// HOUNDRED = 100
-// FIFTY = 50
-// TWENTY = 20
-// TEN = 10
-// FIVE = 5
-// TWO = 2
-// ONE = 1
-// HALFDOLLAR = 0.5
-// QUARTER = 0.25
-// DIME = 0.1
-// NICKLE = 0.05
-// PENNY = 0.01
-// so for example if the given values are:
-// A: 23.2
-// B: 25.88
-// The change would be 2.68 so theAnd Data Structures Certification (300 hours)
-// Basic JavaScriptAnd Data Structures Certification(300 hours)
-// Basic JavaScript output should be:
-// [ 'TWO', 'HALFDOLLAR', 'DIME', 'NICKLE', 'PENNY', 'PENNY', 'PENNY' ]
-// IF YOU FINISH TRY TO MAKE IT WORK IF THE NUMBERS INPUTS ARE
-// A: dfvdsf,23.2fsdcds
-// B: fvfdv-vs,25.88fdsdf
-
-
-// PROMESAS se utilizan para trabjajar la asincronia en javascript , estas se resuelven y rechazan  ( resolve y reject)
-// en una promesa si algop falla se recoge con el then 
-
-// let promise = new Promise(function(resolve, reject) {
-
-//     setTimeout(() => {
-//         resolve("los datos me han llegado correctamente");
-//     }, 1000);
-// });
-
-// promise.then(resultado => console.log(resultado));
-
-// si hay fallo pondrias promise.catch para filtrar el fallo, el .then se puede utilizar para localizar el error pero no es recomendable, la forma seria la siguiente =>
-// promise.then(resultado => console.log(resultado)).catch(err => console.log(err));
-
-// let promise = new Promise(function(resolve, reject) {
-//     let array = ["Manu", "Maria", "Luisa"];
-//     if (array.includes("Pepe")) {
-//         resolve("Tiene a Pepe");
-//     }
-//     reject(new Error("No se ha encontrado a Pepe"));
-// });
-// promise
-//     .then(resultado => console.log(resultado))
-//     .catch(err => console.log(err));
-
-
-// fetch("https://radomuser.me/api/")
-// .then(res => {
-//     return res.json();
-// })
-// .then(data => console.log(data))
-// .catch(e => console.log("error", e));
-
-// .then es una funcion que devuelve un valor que podemos utilizar
-
-
-// una funcion que tenga un stetimeout de 2 segundos que devuelva una respuesta al pasarle una url y llamar a un api publico (que es esa url)
-
-
-
-
-// console.log(x());
-
-// async function githubExample(url = "https://api.github.com/users/carlosurra") {
-//     try {
-//         let res = await fetch(url);
-//         let user = await res.json();
-//         console.log(user);
-//     } catch (e) {
-//         console.log(e);
-//     }
-// }
-
-// githubExample();
-
-// arriba tenemos la forma actual de realizar una funcion asincrona y abajo la antigua. EN la nueva el await siempre tiene que estar dentro de una funcion asincrona y en la antigua el .then retorna una promesa y complica la sintaxis
-
-
-// function githubExample(url = "https://api.github.com/users/carlosurra") {
-//     fetch(url).then(res => {
-//             res.json().then(data => {
-//                     console.log(data);
-//                 })
-//                 .catch(e => {
-//                     console.log(e);
-//                 })
-//         })
-//         .catch(e => {
-//             console.error(e);
-//         })
-// }
-
-// githubExample();
-
-// Promise.all
-
-// como pasar de un objeto a json
-// let obj = {
-//     name: "Pepe",
-//     age: 40
-// };
-
-// // let json = JSON.stringify(obj);
-
-// // console.log(typeof json);
-
-// // para pasar un json a un objeto
-
-// let newObj = JSON.parse(json);
-// var loc = "foo";
-
-// function myTest() {
-//     console.log(loc);
-// }
-// myTest(); // logs "foo"
-
-// var sum = 0;
-
-// function addSum(num) {
-//     sum = sum + num;
-// }
-// var returnedValue = addSum(3);
-// console.log(sum);
-// // sum will be modified but returned value is undefined
-
-
-// function nextInLine(arr, item) {
-//     // arr.push(item);
-//     return arr.push(item)
-// }
-
-// var arr = [9, 2, 3, 4, 5];
-
-// console.log(arr);
-// console.log(nextInLine(arr, 50));
-// console.log(arr);
-// function nextInLine(arr, item) {
-//     let newArr = arr.push(item);
-//     let removed = arr.shift();
-//     return newArr;
-//     return removed;
-// }
-
-// let arr = [1, 2, 3, 4, 5];
-// let item = 6;
-
-// console.log(arr);
-// console.log(newArr);
-// console.log(removed);
-
-// function nextInLine(arr, item) {
-//     return arr.push(item);
-// }
-
-// var arr = ["ana", "luis", "antonio", "jacobo", "marcos"];
-
-// console.log(arr);
-// console.log(nextInLine(arr, 50));
-// console.log(arr);
-
-// var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
-
-// function golfScore(par, strokes) {
-//     // Only change code below this line
-//     if (strokes == 1) {
-//         return names[0];
-//     } else if (strokes <= par - 2) {
-//         return names[1];
-//     } else if (strokes == par - 1) {
-//         return names[2];
-//     } else if (strokes == par) {
-//         return names[3];
-//     } else if (strokes == par + 1) {
-//         return names[4];
-//     } else if (strokes == par + 2) {
-//         return names[5];
-//     } else if (strokes >= par + 3) {
-//         return names[6];
-//     } else {
-//         return "Change Me";
-//         // Only change code above this line
-//     }
-// }
-
-// // Change these values to test
-// golfScore(5, 4);
-// console.log(golfScore(1, 1));
-
-// function chainToSwitch(val) {
-//     var answer = "";
-
-//     if (val === "bob") {
-//         answer = "Marley";
-//     } else if (val === 42) {
-//         answer = "The Answer";
-//     } else if (val === 1) {
-//         answer = "There is no #1";
-//     } else if (val === 99) {
-//         answer = "Missed me by this much!";
-//     } else if (val === 7) {
-//         answer = "Ate Nine";
-//     }
-
-//     return answer;
-// }
-// console.log(chainToSwitch(7));
-
-// chainToSwitch(7);
-
-// function chainToSwitch(val) {
-//     switch (val) {
-//         case "bob":
-//             return "Marley";
-//             break;
-//         case 42:
-//             return "The Answer";
-//             break;
-//         case 1:
-//             return "There is no #1";
-//             break;
-//         case 99:
-//             return "Missed me by this much!";
-//             break;
-//         case 7:
-//             return "Ate Nine";
-//             break;
-//     }
-// }
-// console.log(chainToSwitch(42));
-
-// function isEqual(a, b) {
-//     if (a === b) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
-
-// function isEqual(a, b) {
-//     return a === b;
-// }
-// console.log(isEqual(1, 1));
-
-// function myFun() {
-//     // console.log("Hello");
-//     return "World";
-//     // console.log("byebye")
-// }
-// // myFun();
-// console.log(myFun());
-// console.log(myFun());
-// console.log(myFun(1));
-// let count = 0;
-
-// function cc(card) {
-//     switch (card) {
-//         case 2:
-
-//         case 3:
-
-//         case 4:
-
-//         case 5:
-
-//         case 6:
-
-//             count = 5 + count++;
-//             break;
-//         case 10:
-//         case "J":
-//         case "Q":
-//         case "K":
-//         case "A":
-//             count--;
-//             break;
-//     }
-//     if (count > 0) {
-//         return count + " Bet";
-//     } else {
-//         return count + " Hold";
-//     }
-
-// }
-
-// cc(2);
-// cc(5);
-// cc(4);
-// cc(3);
-// cc(6);
-
-// console.log(cc(7));
-
-
-// var count = 0;
-
-// function cc(card) {
-//     var regex = /[JQKA]/;
-//     if (card > 1 && card < 7) { count++; } else if (card === 10 || String(card).match(regex)) { count--; }
-
-//     if (count > 0) return count + " Bet";
-//     return count + " Hold";
-
-// }
-
-// console.log(cc(2));
-
-// let resulCount = 0;
-
-// resultCount += 
-
-// let a = 1
-// console.log(a);
-// console.log(a++);
-// console.log(a);
-
-// function multiplyAll(arr) {
-//     var product = 1;
-//     // Only change code below this line
-//     for (var i = 0; i < arr.length; i++) {
-//         for (var j = 0; j < arr[i].length; j++) {
-//             product = product * arr[i][j];
-
-//             // Only change code above this line
-//         }
-//     }
-//     return product;
-
-// }
-
-// // Modify values below to test your code
-// console.log(multiplyAll([
-//     [1, 2],
-//     [3, 4],
-//     [5, 6, 7]
-// ]));
-
-// // al tener arrays dentro de un array i seria igual a cada array interno
-
-// // array [i]length = 3, pero empezamos a nombrar cada array desde 0 en este caso hasta 2 = i[0] > [1,2]
-// //                             i[1] > [3,4]
-// //                             i[2] > [5,6,7]
-// // [[1,2],[3,4],[5,6,7]]
-// // y j serian cada uno de los elementos internos de cada array, en este caso            = j[0] y j[1] >       1 y 2
-// //                        j[0] y j[1] >       3 y 4
-// //                        j[0], j[1] y j[2] > 5,6 y 7
-
-// una vez que entras en el for de j  segundo no vuelves al primero o de i hasta que los valores chequeados den false o no cumplan la condicion
-
-
-// console.log(multiplyAll([
-//     [1],
-//     [2],
-//     [3]
-// ]));
-// console.log(multiplyAll([
-//     [5, 1],
-//     [0.2, 4, 0.5],
-//     [3, 9]
-// ]));
-
-// var ourArray = [];
-// var i = 5;
-// while (i < 5) {
-//     ourArray.push(i);
-//     i++;
-// }
+Ejercicio muy guay de una entrevista que hice:
+Given the string values A and B being:
+A: The price of an item.
+B: The money paid for the item.
+You will need to create a function 'cashRegister' to calculate the change to give back after the purchase.
+The change will need to be in the format of an array with the correct string values inside, this values can be:
+HOUNDRED = 100
+FIFTY = 50
+TWENTY = 20
+TEN = 10
+FIVE = 5
+TWO = 2
+ONE = 1
+HALFDOLLAR = 0.5
+QUARTER = 0.25
+DIME = 0.1
+NICKLE = 0.05
+PENNY = 0.01
+so for example if the given values are:
+A: 23.2
+B: 25.88
+The change would be 2.68 so theAnd Data Structures Certification (300 hours)
+Basic JavaScriptAnd Data Structures Certification(300 hours)
+Basic JavaScript output should be:
+[ 'TWO', 'HALFDOLLAR', 'DIME', 'NICKLE', 'PENNY', 'PENNY', 'PENNY' ]
+IF YOU FINISH TRY TO MAKE IT WORK IF THE NUMBERS INPUTS ARE
+A: dfvdsf,23.2fsdcds
+B: fvfdv-vs,25.88fdsdf
+
+
+PROMESAS se utilizan para trabjajar la asincronia en javascript , estas se resuelven y rechazan  ( resolve y reject)
+en una promesa si algop falla se recoge con el then 
+
+let promise = new Promise(function(resolve, reject) {
+
+    setTimeout(() => {
+        resolve("los datos me han llegado correctamente");
+    }, 1000);
+});
+
+promise.then(resultado => console.log(resultado));
+
+si hay fallo pondrias promise.catch para filtrar el fallo, el .then se puede utilizar para localizar el error pero no es recomendable, la forma seria la siguiente =>
+promise.then(resultado => console.log(resultado)).catch(err => console.log(err));
+
+let promise = new Promise(function(resolve, reject) {
+    let array = ["Manu", "Maria", "Luisa"];
+    if (array.includes("Pepe")) {
+        resolve("Tiene a Pepe");
+    }
+    reject(new Error("No se ha encontrado a Pepe"));
+});
+promise
+    .then(resultado => console.log(resultado))
+    .catch(err => console.log(err));
+
+
+fetch("https://radomuser.me/api/")
+.then(res => {
+    return res.json();
+})
+.then(data => console.log(data))
+.catch(e => console.log("error", e));
+
+.then es una funcion que devuelve un valor que podemos utilizar
+
+
+una funcion que tenga un stetimeout de 2 segundos que devuelva una respuesta al pasarle una url y llamar a un api publico (que es esa url)
+
+
+
+
+console.log(x());
+
+async function githubExample(url = "https://api.github.com/users/carlosurra") {
+    try {
+        let res = await fetch(url);
+        let user = await res.json();
+        console.log(user);
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+githubExample();
+
+arriba tenemos la forma actual de realizar una funcion asincrona y abajo la antigua. EN la nueva el await siempre tiene que estar dentro de una funcion asincrona y en la antigua el .then retorna una promesa y complica la sintaxis
+
+
+function githubExample(url = "https://api.github.com/users/carlosurra") {
+    fetch(url).then(res => {
+            res.json().then(data => {
+                    console.log(data);
+                })
+                .catch(e => {
+                    console.log(e);
+                })
+        })
+        .catch(e => {
+            console.error(e);
+        })
+}
+
+githubExample();
+
+Promise.all
+
+como pasar de un objeto a json
+let obj = {
+    name: "Pepe",
+    age: 40
+};
+
+// let json = JSON.stringify(obj);
+
+// console.log(typeof json);
+
+// para pasar un json a un objeto
+
+let newObj = JSON.parse(json);
+var loc = "foo";
+
+function myTest() {
+    console.log(loc);
+}
+myTest(); // logs "foo"
+
+var sum = 0;
+
+function addSum(num) {
+    sum = sum + num;
+}
+var returnedValue = addSum(3);
+console.log(sum);
+// sum will be modified but returned value is undefined
+
+
+function nextInLine(arr, item) {
+    // arr.push(item);
+    return arr.push(item)
+}
+
+var arr = [9, 2, 3, 4, 5];
+
+console.log(arr);
+console.log(nextInLine(arr, 50));
+console.log(arr);
+function nextInLine(arr, item) {
+    let newArr = arr.push(item);
+    let removed = arr.shift();
+    return newArr;
+    return removed;
+}
+
+let arr = [1, 2, 3, 4, 5];
+let item = 6;
+
+console.log(arr);
+console.log(newArr);
+console.log(removed);
+
+function nextInLine(arr, item) {
+    return arr.push(item);
+}
+
+var arr = ["ana", "luis", "antonio", "jacobo", "marcos"];
+
+console.log(arr);
+console.log(nextInLine(arr, 50));
+console.log(arr);
+
+var names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+
+function golfScore(par, strokes) {
+    // Only change code below this line
+    if (strokes == 1) {
+        return names[0];
+    } else if (strokes <= par - 2) {
+        return names[1];
+    } else if (strokes == par - 1) {
+        return names[2];
+    } else if (strokes == par) {
+        return names[3];
+    } else if (strokes == par + 1) {
+        return names[4];
+    } else if (strokes == par + 2) {
+        return names[5];
+    } else if (strokes >= par + 3) {
+        return names[6];
+    } else {
+        return "Change Me";
+        // Only change code above this line
+    }
+}
+
+// Change these values to test
+golfScore(5, 4);
+console.log(golfScore(1, 1));
+
+function chainToSwitch(val) {
+    var answer = "";
+
+    if (val === "bob") {
+        answer = "Marley";
+    } else if (val === 42) {
+        answer = "The Answer";
+    } else if (val === 1) {
+        answer = "There is no #1";
+    } else if (val === 99) {
+        answer = "Missed me by this much!";
+    } else if (val === 7) {
+        answer = "Ate Nine";
+    }
+
+    return answer;
+}
+console.log(chainToSwitch(7));
+
+chainToSwitch(7);
+
+function chainToSwitch(val) {
+    switch (val) {
+        case "bob":
+            return "Marley";
+            break;
+        case 42:
+            return "The Answer";
+            break;
+        case 1:
+            return "There is no #1";
+            break;
+        case 99:
+            return "Missed me by this much!";
+            break;
+        case 7:
+            return "Ate Nine";
+            break;
+    }
+}
+console.log(chainToSwitch(42));
+
+function isEqual(a, b) {
+    if (a === b) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function isEqual(a, b) {
+    return a === b;
+}
+console.log(isEqual(1, 1));
+
+function myFun() {
+    // console.log("Hello");
+    return "World";
+    // console.log("byebye")
+}
+// myFun();
+console.log(myFun());
+console.log(myFun());
+console.log(myFun(1));
+let count = 0;
+
+function cc(card) {
+    switch (card) {
+        case 2:
+
+        case 3:
+
+        case 4:
+
+        case 5:
+
+        case 6:
+
+            count = 5 + count++;
+            break;
+        case 10:
+        case "J":
+        case "Q":
+        case "K":
+        case "A":
+            count--;
+            break;
+    }
+    if (count > 0) {
+        return count + " Bet";
+    } else {
+        return count + " Hold";
+    }
+
+}
+
+cc(2);
+cc(5);
+cc(4);
+cc(3);
+cc(6);
+
+console.log(cc(7));
+
+
+var count = 0;
+
+function cc(card) {
+    var regex = /[JQKA]/;
+    if (card > 1 && card < 7) { count++; } else if (card === 10 || String(card).match(regex)) { count--; }
+
+    if (count > 0) return count + " Bet";
+    return count + " Hold";
+
+}
+
+console.log(cc(2));
+
+let resulCount = 0;
+
+resultCount += 
+
+let a = 1
+console.log(a);
+console.log(a++);
+console.log(a);
+
+function multiplyAll(arr) {
+    var product = 1;
+    // Only change code below this line
+    for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr[i].length; j++) {
+            product = product * arr[i][j];
+
+            // Only change code above this line
+        }
+    }
+    return product;
+
+}
+
+// Modify values below to test your code
+console.log(multiplyAll([
+    [1, 2],
+    [3, 4],
+    [5, 6, 7]
+]));
+
+// al tener arrays dentro de un array i seria igual a cada array interno
+
+// array [i]length = 3, pero empezamos a nombrar cada array desde 0 en este caso hasta 2 = i[0] > [1,2]
+//                             i[1] > [3,4]
+//                             i[2] > [5,6,7]
+// [[1,2],[3,4],[5,6,7]]
+// y j serian cada uno de los elementos internos de cada array, en este caso            = j[0] y j[1] >       1 y 2
+//                        j[0] y j[1] >       3 y 4
+//                        j[0], j[1] y j[2] > 5,6 y 7
+
+una vez que entras en el for de j  segundo no vuelves al primero o de i hasta que los valores chequeados den false o no cumplan la condicion
+
+
+console.log(multiplyAll([
+    [1],
+    [2],
+    [3]
+]));
+console.log(multiplyAll([
+    [5, 1],
+    [0.2, 4, 0.5],
+    [3, 9]
+]));
+
+var ourArray = [];
+var i = 5;
+while (i < 5) {
+    ourArray.push(i);
+    i++;
+}
+console.log(ourArray);
+
+var ourArray = [];
+var i = 5;
+do {
+    ourArray.push(i);
+    i++;
+} while (i < 5);
+
+
 // console.log(ourArray);
 
-// var ourArray = [];
-// var i = 5;
-// do {
-//     ourArray.push(i);
-//     i++;
-// } while (i < 5);
+var contacts = [{
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    }
+];
 
+function lookUpProfile(name, prop) {
+    for (var x = 0; x < contacts.length; x++) {
+        if (contacts[x].firstName === name) {
+            if (contacts[x].hasOwnProperty(prop)) {
+                return contacts[x][prop];
+            } else {
+                return "No such property";
+            }
+        }
+    }
+    return "No such contact";
+}
+console.log(lookUpProfile("Kristian", "likes"));
+console.log(contacts.length);
 
-// // console.log(ourArray);
-
-// var contacts = [{
-//         "firstName": "Akira",
-//         "lastName": "Laine",
-//         "number": "0543236543",
-//         "likes": ["Pizza", "Coding", "Brownie Points"]
-//     },
-//     {
-//         "firstName": "Harry",
-//         "lastName": "Potter",
-//         "number": "0994372684",
-//         "likes": ["Hogwarts", "Magic", "Hagrid"]
-//     },
-//     {
-//         "firstName": "Sherlock",
-//         "lastName": "Holmes",
-//         "number": "0487345643",
-//         "likes": ["Intriguing Cases", "Violin"]
-//     },
-//     {
-//         "firstName": "Kristian",
-//         "lastName": "Vos",
-//         "number": "unknown",
-//         "likes": ["JavaScript", "Gaming", "Foxes"]
-//     }
-// ];
-
-// function lookUpProfile(name, prop) {
-//     for (var x = 0; x < contacts.length; x++) {
-//         if (contacts[x].firstName === name) {
-//             if (contacts[x].hasOwnProperty(prop)) {
-//                 return contacts[x][prop];
-//             } else {
-//                 return "No such property";
-//             }
-//         }
-//     }
-//     return "No such contact";
-// }
-// console.log(lookUpProfile("Kristian", "likes"));
-// console.log(contacts.length);
-
-// function findGreater(a, b) {
-//     if (a > b) {
-//         return "a is greater";
-//     } else {
-//         return "b is greater";
-//     }
-// }
+function findGreater(a, b) {
+    if (a > b) {
+        return "a is greater";
+    } else {
+        return "b is greater";
+    }
+}
 
 
 
-// function findGreater(a, b) {
-//     return a > b ? "a is greater" : "b is greater";
-// }
+function findGreater(a, b) {
+    return a > b ? "a is greater" : "b is greater";
+}
 
-// console.log(findGreater(5, 9));
+console.log(findGreater(5, 9));
 
-// const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
-// const squareList = (arr) => {
-//     "use strict";
-//     const squaredIntegers = arr;
-//     realNumberArray.filter((x) => x % 1 != 0 && x > 0)
-//     return squaredIntegers;
-// };
-// const squaredIntegers = squareList(realNumberArray);
-// console.log(squaredIntegers);
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+const squareList = (arr) => {
+    "use strict";
+    const squaredIntegers = arr;
+    realNumberArray.filter((x) => x % 1 != 0 && x > 0)
+    return squaredIntegers;
+};
+const squaredIntegers = squareList(realNumberArray);
+console.log(squaredIntegers);
 
-// const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
 
-// const squaredIntegers = realNumberArray.filter((x) => x > 0 && x % 1 == 0).map((x) => x ** 2);
-
-
-
-// console.log(squaredIntegers);
-// const increment = (function() {
-//     "use strict";
-//     return function increment(number, value) {
-//         return number + value;
-//     };
-// })();
-// console.log(increment(5, 1)); // returns 7
-// console.log(increment(5, 1)); // returns 6
-
-// const increment = ((number = 5, value) => number + value);
-
-// console.log(increment(7, 2));
-
-// console.log(increment(5, 2)); // returns 7
-// console.log(increment(5)); // returns 6
-
-// var flyToTheMoon = function() {
-//     return "Zoom! Zoom! Zoom!";
-// }
-// console.log(flyToTheMoon());
-
-// function howMany(...args) {
-//     return "You have passed " + args.length + " arguments.";
-// }
-// console.log(howMany(0, 1, 2)); // You have passed 3 arguments
-// console.log(howMany("string", null, [1, 2, 3], {})); // You have passed 4 arguments.
+const squaredIntegers = realNumberArray.filter((x) => x > 0 && x % 1 == 0).map((x) => x ** 2);
 
 
 
-// const sum = (function(...args) {
-//     "use strict";
-//     return function sum(x, y, z) {
-//         const args = [x, y, z];
-//         return args.reduce((a, b) => a + b, 0);
-//     };
-// })();
+console.log(squaredIntegers);
+const increment = (function() {
+    "use strict";
+    return function increment(number, value) {
+        return number + value;
+    };
+})();
+console.log(increment(5, 1)); // returns 7
+console.log(increment(5, 1)); // returns 6
+
+const increment = ((number = 5, value) => number + value);
+
+console.log(increment(7, 2));
+
+console.log(increment(5, 2)); // returns 7
+console.log(increment(5)); // returns 6
+
+var flyToTheMoon = function() {
+    return "Zoom! Zoom! Zoom!";
+}
+console.log(flyToTheMoon());
+
+function howMany(...args) {
+    return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2)); // You have passed 3 arguments
+console.log(howMany("string", null, [1, 2, 3], {})); // You have passed 4 arguments.
+
+
+
+const sum = (function(...args) {
+    "use strict";
+    return function sum(x, y, z) {
+        const args = [x, y, z];
+        return args.reduce((a, b) => a + b, 0);
+    };
+})();
+console.log(sum(1, 2, 3));
+let args = [1, 2, 3];
+const sum = (function() {
+    return function sum(...args) {
+        return args.reduce(function(a, b) {
+            return a + b;
+        }, 10);
+    }
+})();
 // console.log(sum(1, 2, 3));
-// let args = [1, 2, 3];
-// const sum = (function() {
-//     return function sum(...args) {
-//         return args.reduce(function(a, b) {
-//             return a + b;
-//         }, 10);
-//     }
-// })();
-// // console.log(sum(1, 2, 3));
-// // console.log(sum(1, 2, 3, 4));
-// // console.log(sum(5));
-// // console.log(sum(0));
+// console.log(sum(1, 2, 3, 4));
+// console.log(sum(5));
+// console.log(sum(0));
 
-// console.log(sum(2, 5));
+console.log(sum(2, 5));
 
-// const arr = [6, 89, 3, 45];
-// const maximus = Math.max(...arr); // returns 89
-// console.log(maximus);
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr); // returns 89
+console.log(maximus);
 
-// var voxel = { x: 3.6, y: 7.4, z: 6.54 };
-// // var x = voxel.x; // x = 3.6
-// // var y = voxel.y; // y = 7.4
-// // var z = voxel.z; // z = 6.54
+var voxel = { x: 3.6, y: 7.4, z: 6.54 };
+// var x = voxel.x; // x = 3.6
+// var y = voxel.y; // y = 7.4
+// var z = voxel.z; // z = 6.54
 
 
-// const { x: a, y: b, z: c } = voxel; // x = 3.6, y = 7.4, z = 6.54
+const { x: a, y: b, z: c } = voxel; // x = 3.6, y = 7.4, z = 6.54
 
-// console.log(a);
-// console.log(b);
-// console.log(c);
+console.log(a);
+console.log(b);
+console.log(c);
 
-// const AVG_TEMPERATURES = {
-//     today: 77.5,
-//     tomorrow: 79
-// };
+const AVG_TEMPERATURES = {
+    today: 77.5,
+    tomorrow: 79
+};
 
-// function getTempOfTmrw(avgTemperatures) {
-//     "use strict";
-//     // change code below this line
-//     const { tomorrow: tempOfTomorrow } = avgTemperatures;
-//     // change code above this line
-//     return tempOfTomorrow;
-// }
+function getTempOfTmrw(avgTemperatures) {
+    "use strict";
+    // change code below this line
+    const { tomorrow: tempOfTomorrow } = avgTemperatures;
+    // change code above this line
+    return tempOfTomorrow;
+}
 
-// console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
-// const a = {
-//     start: { x: 5, y: 6 },
-//     end: { x: 6, y: -9 }
-// };
-// const { start: { x: startX, y: startY } } = a;
-// console.log(startX, startY); // 5, 6
-// console.log(a.start);
-
-
-// const [a, b, , , c, m] = [1, 2, 3, 4, 5, 6];
-// console.log(a, b, c, m); // 1, 2ç
-
-// const [a, b, ...args] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-// let source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
+const a = {
+    start: { x: 5, y: 6 },
+    end: { x: 6, y: -9 }
+};
+const { start: { x: startX, y: startY } } = a;
+console.log(startX, startY); // 5, 6
+console.log(a.start);
 
 
-// function removeFirstTwo(list) {
-//     "use strict";
-//     // change code below this line
-//     const [a, b, ...arr] = source;
-//     // change code above this line
-//     return arr;
-// }
-// const arr = removeFirstTwo(source);
-// console.log(arr); // should be [3,4,5,6,7,8,9,10]
-// console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];
+const [a, b, , , c, m] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c, m); // 1, 2ç
 
-// const stats = {
-//     max: 56.78,
-//     standard_deviation: 4.34,
-//     median: 34.54,
-//     mode: 23.87,
-//     min: -0.75,
-//     average: 35.85
-// };
-// const half = ({ max, min }) => ((max + min) / 2.0);
-// // change code above this line
-
-// console.log(stats); // should be object
-// console.log(half(stats)); // should be 28.015
+const [a, b, ...args] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
-// const person = {
-//     name: "Zodiac Hasbro",
-//     age: 56
-// };
+function removeFirstTwo(list) {
+    "use strict";
+    // change code below this line
+    const [a, b, ...arr] = source;
+    // change code above this line
+    return arr;
+}
+const arr = removeFirstTwo(source);
+console.log(arr); // should be [3,4,5,6,7,8,9,10]
+console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];
 
-// // Template literal with multi-line and string interpolation
-// const greeting = `Hello, my name is ${person.name}!
-//   I am ${person.age} years old.`;
+const stats = {
+    max: 56.78,
+    standard_deviation: 4.34,
+    median: 34.54,
+    mode: 23.87,
+    min: -0.75,
+    average: 35.85
+};
+const half = ({ max, min }) => ((max + min) / 2.0);
+// change code above this line
 
-// console.log(greeting); // prints
-// // Hello, my name is Zodiac Hasbro!
-// // I am 56 years old.
-
-
-// const result = {
-//     success: ["max-length", "no-amd", "prefer-arrow-functions"],
-//     failure: ["no-var", "var-on-top", "linebreak"],
-//     skipped: ["id-blacklist", "no-dup-keys"]
-// };
-
-// function makeList(arr) {
-
-//     const resultDisplayArray = arr.map((arr) => (`<li class="text-warning">${arr}</li>`))
-//     return resultDisplayArray;
-// }
-// /**
-//  * makeList(result.failure) should return:
-//  * [ `<li class="text-warning">no-var</li>`,
-//  *   `<li class="text-warning">var-on-top</li>`, 
-//  *   `<li class="text-warning">linebreak</li>` ]
-//  **/
-// const resultDisplayArray = makeList(result.failure);
-// console.log(resultDisplayArray);
+console.log(stats); // should be object
+console.log(half(stats)); // should be 28.015
 
 
-// function makeClass() {
-//     "use strict";
-//     /* Alter code below this line */
-//     class Vegetable {
-//         constructor(name) {
-//             this.name = name;
-//         }
-//     }
-//     /* Alter code above this line */
-//     return Vegetable;
-// }
-// const Vegetable = makeClass();
-// const carrot = new Vegetable('a');
-// console.log(carrot.name); // => should be 'carrot'
+const person = {
+    name: "Zodiac Hasbro",
+    age: 56
+};
 
-// class Book {
-//     constructor(author) {
-//             this._author = author;
-//         }
-//         // getter
-//     get writer() {
-//             return this._author;
-//         }
-//         // setter
-//     set writer(updatedAuthor) {
-//         this._author = updatedAuthor;
-//     }
-// }
-// const lol = new Book('anonymous');
-// console.log(lol.writer); // anonymous
-// lol.writer = 'wut';
-// console.log(lol.writer); // wut
+// Template literal with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}!
+  I am ${person.age} years old.`;
 
-// function makeClass() {
-//     class Thermostat {
-//         constructor(farenheit) {
-//             this.farenheit = farenheit;
-//         }
-//         get temperature() {
-//             return (this.farenheit - 32) * (5 / 9);
-//         }
-//         set temperature(celsius) {
-//             this.farenheit = (celsius * 9) / 5 + 32;
-//         }
-//     }
-//     return Thermostat;
-// }
-// const Thermostat = makeClass();
-// const thermos = new Thermostat(76); // setting in Fahrenheit scale
-// // console.log(thermos);
-// let temp = thermos.temperature; // 24.44 in C
-// // console.log(temp);
-// thermos.temperature = 26;
-// temp = thermos.temperature; // 26 in C
-// console.log();
-
-// function mixedNumbers(arr) {
-//     // change code below this line
-//     arr.unshift("I", 2, "three");
-//     console.log(arr);
-//     arr.push(7, "VIII", 9);
-//     console.log(arr);
-//     // change code above this line
-//     return arr;
-// }
-
-// // do not change code below this line
-// console.log(mixedNumbers(['IV', 5, 'six']));
-
-// let greetings = ['whats up?', 'hello', 'see ya!'];
-
-// greetings.pop();
-// // now equals ['whats up?', 'hello']
-// console.log(greetings);
-// greetings.shift();
-// // now equals ['hello']
-// console.log(greetings);
-
-// let popped = greetings.pop();
-// // returns 'hello'
-// // greetings now equals []
-// console.log(popped);
-// console.log(greetings);
-
-// function popShift(arr) {
-//     let popped = arr.pop(); // change this line
-//     let shifted = arr.shift(); // change this line
-//     return [shifted, popped];
-// }
-
-// // do not change code below this line
-// console.log(popShift(['challenge', 'is', 'not', 'complete']));
-
-// function sumOfTen(arr) {
-//     // change code below this line
-//     arr.splice(1, 2);
-//     // change code above this line
-//     return arr.reduce((a, b) => a + b);
-// }
-
-// // do not change code below this line
-// console.log(sumOfTen([2, 5, 1, 5, 2, 1]));
-
-// function colorChange(arr, index, newColor) {
-//     arr.splice(index, 1, newColor);
-//     console.log(arr);
-
-//     return arr;
-
-// }
-// let colorScheme = ["#878787", "#a08794", "#bb7e8c", "#c9b6be", "#d1bec"];
-
-// colorScheme = colorChange(colorScheme, 2, "#332327");
+console.log(greeting); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
 
 
-// // we have removed '#bb7e8c' and added '#332327' in its place
-// // colorScheme now equals ['#878787', '#a08794', '#332327', '#c9b6be', '#d1becf']
+const result = {
+    success: ["max-length", "no-amd", "prefer-arrow-functions"],
+    failure: ["no-var", "var-on-top", "linebreak"],
+    skipped: ["id-blacklist", "no-dup-keys"]
+};
 
-// function htmlColorNames(arr) {
-//     // change code below this line
-//     arr.splice(0, 2, "DarkSalmon", "BlanchedAlmond");
+function makeList(arr) {
 
-//     // change code above this line
-//     return arr;
-// }
+    const resultDisplayArray = arr.map((arr) => (`<li class="text-warning">${arr}</li>`))
+    return resultDisplayArray;
+}
+/**
+ * makeList(result.failure) should return:
+ * [ `<li class="text-warning">no-var</li>`,
+ *   `<li class="text-warning">var-on-top</li>`, 
+ *   `<li class="text-warning">linebreak</li>` ]
+ **/
+const resultDisplayArray = makeList(result.failure);
+console.log(resultDisplayArray);
 
-// // do not change code below this line
-// console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']));
 
-// let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+function makeClass() {
+    "use strict";
+    /* Alter code below this line */
+    class Vegetable {
+        constructor(name) {
+            this.name = name;
+        }
+    }
+    /* Alter code above this line */
+    return Vegetable;
+}
+const Vegetable = makeClass();
+const carrot = new Vegetable('a');
+console.log(carrot.name); // => should be 'carrot'
 
-// let todaysWeather = weatherConditions.slice(1, 3);
-// console.log(todaysWeather);
-// console.log(weatherConditions);
-// // todaysWeather equals ['snow', 'sleet'];
-// // weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']
+class Book {
+    constructor(author) {
+            this._author = author;
+        }
+        // getter
+    get writer() {
+            return this._author;
+        }
+        // setter
+    set writer(updatedAuthor) {
+        this._author = updatedAuthor;
+    }
+}
+const lol = new Book('anonymous');
+console.log(lol.writer); // anonymous
+lol.writer = 'wut';
+console.log(lol.writer); // wut
 
-// function forecast(arr) {
-//     // change code below this line
-//     arr.slice(2, 4);
-//     return arr;
-// }
+function makeClass() {
+    class Thermostat {
+        constructor(farenheit) {
+            this.farenheit = farenheit;
+        }
+        get temperature() {
+            return (this.farenheit - 32) * (5 / 9);
+        }
+        set temperature(celsius) {
+            this.farenheit = (celsius * 9) / 5 + 32;
+        }
+    }
+    return Thermostat;
+}
+const Thermostat = makeClass();
+const thermos = new Thermostat(76); // setting in Fahrenheit scale
+// console.log(thermos);
+let temp = thermos.temperature; // 24.44 in C
+// console.log(temp);
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in C
+console.log();
 
-// // do not change code below this line
-// console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+function mixedNumbers(arr) {
+    // change code below this line
+    arr.unshift("I", 2, "three");
+    console.log(arr);
+    arr.push(7, "VIII", 9);
+    console.log(arr);
+    // change code above this line
+    return arr;
+}
 
-// function copyMachine(arr, num) {
-//     let newArr = [];
-//     while (num >= 1) {
-//         // change code below this line
-//         newArr.push([...arr]);
-//         // change code above this line
-//         num--;
-//     }
-//     return newArr;
-// }
+// do not change code below this line
+console.log(mixedNumbers(['IV', 5, 'six']));
 
-// // change code here to test different cases:
-// console.log(copyMachine([true, false, true], 1));
+let greetings = ['whats up?', 'hello', 'see ya!'];
 
-// function quickCheck(arr, elem) {
-//     // change code below this line
-//     if (arr.indexOf(elem) >= 0) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-//     // change code above this line
-// }
+greetings.pop();
+// now equals ['whats up?', 'hello']
+console.log(greetings);
+greetings.shift();
+// now equals ['hello']
+console.log(greetings);
 
-// // change code here to test different cases:
-// console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+let popped = greetings.pop();
+// returns 'hello'
+// greetings now equals []
+console.log(popped);
+console.log(greetings);
 
-// function greaterThanTen(arr) {
-//     let newArr = [];
-//     for (let i = 0; i < arr.length; i++) {
-//         if (arr[i] > 10) {
-//             newArr.push(arr[i]);
-//         }
-//     }
-//     return newArr;
-// }
+function popShift(arr) {
+    let popped = arr.pop(); // change this line
+    let shifted = arr.shift(); // change this line
+    return [shifted, popped];
+}
 
-// greaterThanTen([2, 12, 8, 14, 80, 0, 1]);
-// // returns [12, 14, 80]
+// do not change code below this line
+console.log(popShift(['challenge', 'is', 'not', 'complete']));
 
-// function filteredArray(arr, elem) {
-//     let newArr = [];
-//     // change code below this line
-//     for (let i = 0; i < arr.length; i++) {
-//         if (arr[i].indexOf(elem) == -1) {
-//             newArr.push(arr[i]);
-//         };
-//     };
+function sumOfTen(arr) {
+    // change code below this line
+    arr.splice(1, 2);
+    // change code above this line
+    return arr.reduce((a, b) => a + b);
+}
 
-//     // change code above this line
-//     return newArr;
-// }
+// do not change code below this line
+console.log(sumOfTen([2, 5, 1, 5, 2, 1]));
 
-// // change code here to test different cases:
-// // console.log(filteredArray([
-// //     [3, 2, 3],
-// //     [1, 6, 3],
-// //     [3, 13, 26],
-// //     [19, 3, 9]
-// // ], 3));
+function colorChange(arr, index, newColor) {
+    arr.splice(index, 1, newColor);
+    console.log(arr);
+
+    return arr;
+
+}
+let colorScheme = ["#878787", "#a08794", "#bb7e8c", "#c9b6be", "#d1bec"];
+
+colorScheme = colorChange(colorScheme, 2, "#332327");
+
+
+// we have removed '#bb7e8c' and added '#332327' in its place
+// colorScheme now equals ['#878787', '#a08794', '#332327', '#c9b6be', '#d1becf']
+
+function htmlColorNames(arr) {
+    // change code below this line
+    arr.splice(0, 2, "DarkSalmon", "BlanchedAlmond");
+
+    // change code above this line
+    return arr;
+}
+
+// do not change code below this line
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']));
+
+let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
+
+let todaysWeather = weatherConditions.slice(1, 3);
+console.log(todaysWeather);
+console.log(weatherConditions);
+// todaysWeather equals ['snow', 'sleet'];
+// weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']
+
+function forecast(arr) {
+    // change code below this line
+    arr.slice(2, 4);
+    return arr;
+}
+
+// do not change code below this line
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+
+function copyMachine(arr, num) {
+    let newArr = [];
+    while (num >= 1) {
+        // change code below this line
+        newArr.push([...arr]);
+        // change code above this line
+        num--;
+    }
+    return newArr;
+}
+
+// change code here to test different cases:
+console.log(copyMachine([true, false, true], 1));
+
+function quickCheck(arr, elem) {
+    // change code below this line
+    if (arr.indexOf(elem) >= 0) {
+        return true;
+    } else {
+        return false;
+    }
+    // change code above this line
+}
+
+// change code here to test different cases:
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+
+function greaterThanTen(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > 10) {
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
+
+greaterThanTen([2, 12, 8, 14, 80, 0, 1]);
+// returns [12, 14, 80]
+
+function filteredArray(arr, elem) {
+    let newArr = [];
+    // change code below this line
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].indexOf(elem) == -1) {
+            newArr.push(arr[i]);
+        };
+    };
+
+    // change code above this line
+    return newArr;
+}
+
+// change code here to test different cases:
 // console.log(filteredArray([
-//     [10, 8, 3],
-//     [14, 6, 23],
-//     [3, 18, 6]
-// ], 18))
+//     [3, 2, 3],
+//     [1, 6, 3],
+//     [3, 13, 26],
+//     [19, 3, 9]
+// ], 3));
+console.log(filteredArray([
+    [10, 8, 3],
+    [14, 6, 23],
+    [3, 18, 6]
+], 18))
 
 
 
 
-// let myNestedArray = [
-//     ['unshift', false, 1, 2, 3, 'complex', 'nested'],
-//     [
-//         ['deep', 'shift', 6, 7, 1000, 'method']
-//     ],
-//     [
-//         [
-//             ['concat', false, true, 'spread', 'array'],
-//             ['mutate', 1327.98, 'splice', 'slice', 'deeper']
-//         ],
-//         [
-//             [
-//                 ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'deepest']
-//             ]
-//         ]
-//     ]
-// ];
-// console.log(myNestedArray[1][0][0][0][0]);
+let myNestedArray = [
+    ['unshift', false, 1, 2, 3, 'complex', 'nested'],
+    [
+        ['deep', 'shift', 6, 7, 1000, 'method']
+    ],
+    [
+        [
+            ['concat', false, true, 'spread', 'array'],
+            ['mutate', 1327.98, 'splice', 'slice', 'deeper']
+        ],
+        [
+            [
+                ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'deepest']
+            ]
+        ]
+    ]
+];
+console.log(myNestedArray[1][0][0][0][0]);
 
 
-// bucle que genere un programa que saque por consola del 1 al 10 =>
-// 1
-// 12
-// 123
-// 1234
-// let rep = 0;
-// let num = 1;
-
-
-
-
-
-// let number = "";
-
-// function display(num) {
-//     for (i = 1; i <= num; i++) {
-//         console.log(number += i);
-//     }
-// }
-// display(10);
+bucle que genere un programa que saque por consola del 1 al 10 =>
+1
+12
+123
+1234
+let rep = 0;
+let num = 1;
 
 
 
 
-// piramide invertida
 
-// let arr = ["a", "b", "c", "d"];
+let number = "";
 
-// function convert(arr) {
-//     let result = [];
-//     for (i = 0; i < arr.length; i++) {
-//         let code = arr[i].charCodeAt(0);
-//         if (code >= 97 && code <= 122) {
-//             code -= 32;
-//         }
-//         result += String.fromCharCode(code);
-//     }
-//     return result;
-// };
-// console.log(convert(arr));
+function display(num) {
+    for (i = 1; i <= num; i++) {
+        console.log(number += i);
+    }
+}
+display(10);
 
 
-// console.log(convert(["a", "b", "c", "d"]));
 
-// let arr = ["a", "b", "c", "d"];
-// arr = arr.map(function(x) { return x.toUpperCase() });
-// console.log(arr);
+
+piramide invertida
+
+let arr = ["a", "b", "c", "d"];
+
+function convert(arr) {
+    let result = [];
+    for (i = 0; i < arr.length; i++) {
+        let code = arr[i].charCodeAt(0);
+        if (code >= 97 && code <= 122) {
+            code -= 32;
+        }
+        result += String.fromCharCode(code);
+    }
+    return result;
+};
+console.log(convert(arr));
+
+
+console.log(convert(["a", "b", "c", "d"]));
+
+let arr = ["a", "b", "c", "d"];
+arr = arr.map(function(x) { return x.toUpperCase() });
+console.log(arr);

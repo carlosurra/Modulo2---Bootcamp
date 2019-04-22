@@ -533,15 +533,11 @@ console.log(printStars(3, 5));
 
 /** escribe una funcion que calcule el factorial de un numero. el factorial de un numero , si el numero es N(5por ejemplo), seria 5 x 4 x 3 x 2 x 1 */
 
-function calculateFactorial(number) {
-    let total = 1;
+function calculateFactorial(n) {
 
-    for (let i = 0; i < number; i++) {
-        total = total * (number - i);
-    }
-    return total;
+    return (n != 1) ? n * calculateFactorial(n - 1) : 1;
 };
-console.log(calculateFactorial(10));
+console.log(calculateFactorial(8));
 
 /** haz una funcion que reciba 3 numero y los devuelva ordenados en un array*/
 
